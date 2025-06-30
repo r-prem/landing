@@ -1,0 +1,5 @@
+Contact: mailto:raffaelprem@gmail.com
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en, de
+Canonical: https://rprem.com/.well-known/security.txt
+Policy: https://rprem.com/imprint 

@@ -226,12 +226,6 @@
 				>
 					CONTACT ME
 				</a>
-				<a 
-					href="/portfolio" 
-					class="neobrutalism-button bg-pink-500 text-white px-8 py-4 text-xl font-black border-4 border-white transition-all duration-150 shadow-[8px_8px_0px_0px_theme(colors.white)] hover:shadow-[12px_12px_0px_0px_theme(colors.white)]"
-				>
-					VIEW PORTFOLIO
-				</a>
 			</div>
 		</div>
 	</section>

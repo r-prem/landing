@@ -169,7 +169,7 @@
 					<p class="text-lg font-semibold text-gray-800">Freelance Software Developer</p>
 				</div>
 				<div class="flex flex-col sm:flex-row gap-4">
-					<a href="https://www.linkedin.com/in/raffael-prem/" class="neobrutalism-button bg-black text-white px-6 py-3 font-black border-2 border-black text-center transition-all duration-150 shadow-[4px_4px_0px_0px_theme(colors.gray.400)]">
+					<a href="https://www.linkedin.com/in/raffael-prem/" class="plausible-event-name=Form+Submit neobrutalism-button bg-black text-white px-6 py-3 font-black border-2 border-black text-center transition-all duration-150 shadow-[4px_4px_0px_0px_theme(colors.gray.400)]">
 						LINKEDIN
 					</a>
 					<a href="/imprint" class="neobrutalism-button bg-blue-400 text-black px-6 py-3 font-black border-2 border-black text-center transition-all duration-150 shadow-[4px_4px_0px_0px_theme(colors.gray.400)]">

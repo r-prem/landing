@@ -3,42 +3,30 @@
 	type Mark = { id: string; name: string; idea: string; svg: string };
 
 	const marks: Mark[] = [
-		{
-			id: 'A',
-			name: 'Pennant',
-			idea: 'A P made of one bar and one triangle. Also reads as a flag and as a play button: start something.',
-			svg: `<rect x="24" y="14" width="14" height="72"/><path d="M38 14 L78 34 L38 54Z"/>`
-		},
-		{
-			id: 'B',
-			name: 'R and P, two parts',
-			idea: 'P is a bar and a triangle; R is the same plus a second triangle for the leg. Two letters, three shapes.',
-			svg: `<rect x="8" y="18" width="10" height="64"/><path d="M18 18 L44 33 L18 48Z"/><path d="M18 48 L44 82 L24 82 L18 74Z"/><rect x="56" y="18" width="10" height="64"/><path d="M66 18 L92 33 L66 48Z"/>`
-		},
-		{
-			id: 'C',
-			name: 'Diode',
-			idea: 'The schematic symbol for a diode: current flows one way. A triangle that means something to anyone who reads circuits.',
-			svg: `<rect x="6" y="47" width="22" height="6"/><path d="M28 24 L66 50 L28 76Z"/><rect x="66" y="24" width="8" height="52"/><rect x="74" y="47" width="20" height="6"/>`
-		},
-		{
-			id: 'D',
-			name: 'Pin 1',
-			idea: 'A chip seen from above. Every IC marks pin 1 with a cut corner; here the cut is the whole logo.',
-			svg: `<path d="M44 14 H86 V86 H14 V44Z"/><path d="M14 14 H30 L14 30Z"/>`
-		},
-		{
-			id: 'E',
-			name: 'Half-square RP',
-			idea: 'R and P set on a 3 × 5 grid of squares and half-squares. Pixel type, but only 45° triangles allowed.',
-			svg: `<g transform="translate(6 20)">${grid(['sst', 's.s', 'ssb', 's.r', 's.s'])}</g><g transform="translate(54 20)">${grid(['sst', 's.s', 'ssb', 's..', 's..'])}</g>`
-		},
-		{
-			id: 'F',
-			name: 'Prompt',
-			idea: 'A run triangle and a cursor. What is on screen right before something starts working.',
-			svg: `<path d="M14 26 L50 50 L14 74Z"/><rect x="58" y="66" width="30" height="8"/>`
-		}
+		{ id: '01', name: 'Slash', idea: 'Two right triangles with a gap between them. A parallelogram that has been cut once.',
+			svg: `<path d="M10 76 L46 24 L46 76Z"/><path d="M54 24 L90 24 L54 76Z"/>` },
+		{ id: '02', name: 'Fold', idea: 'A sheet with one corner folded over. The triangle is the fold.',
+			svg: `<path d="M16 14 H84 V54 H54 V84 H16Z"/><path d="M60 60 H84 L60 84Z"/>` },
+		{ id: '03', name: 'Balance', idea: 'A triangle standing on its tip, exactly on a line. Slightly unlikely, perfectly still.',
+			svg: `<path d="M24 22 H76 L50 74Z"/><rect x="18" y="78" width="64" height="5"/>` },
+		{ id: '04', name: 'Hourglass', idea: 'Two triangles touching at one point. Time, a latch, a meeting.',
+			svg: `<path d="M26 14 H74 L50 48Z"/><path d="M50 52 L74 86 H26Z"/>` },
+		{ id: '05', name: 'Lift', idea: 'A small triangle floating above a large one. Something leaving the ground.',
+			svg: `<path d="M12 86 L50 34 L88 86Z"/><path d="M42 26 L50 14 L58 26Z"/>` },
+		{ id: '06', name: 'Pinwheel', idea: 'Three triangles turning around a point. Reads as motion without an arrow.',
+			svg: `<g transform="translate(50 52)"><path d="M0 0 L0 -38 L30 -20Z"/><path d="M0 0 L0 -38 L30 -20Z" transform="rotate(120)"/><path d="M0 0 L0 -38 L30 -20Z" transform="rotate(240)"/></g>` },
+		{ id: '07', name: 'Bite', idea: 'A right triangle with a small triangle taken out of its long side.',
+			svg: `<path fill-rule="evenodd" d="M14 86 H86 V14Z M50 50 L60 60 L64 46Z"/>` },
+		{ id: '08', name: 'Tiles', idea: 'Four half-squares in a 2 × 2 grid. One of them is turned the other way.',
+			svg: `<path d="M14 14 H48 L14 48Z"/><path d="M52 14 H86 L52 48Z"/><path d="M14 52 H48 L14 86Z"/><path d="M86 52 V86 H52Z"/>` },
+		{ id: '09', name: 'Half', idea: 'An outline triangle, half filled. A state between off and on.',
+			svg: `<path d="M50 16 L88 82 H12Z" fill="none" stroke-width="5" stroke-linejoin="miter"/><path d="M50 16 L50 82 H12Z"/>` },
+		{ id: '10', name: 'Notch', idea: 'A square with a triangle notch cut into its top edge. A fitting, a slot, a key.',
+			svg: `<path d="M16 16 H40 L50 32 L60 16 H84 V84 H16Z"/>` },
+		{ id: '11', name: 'Shift', idea: 'Two equal triangles, one stepped forward. A frame of a small movement.',
+			svg: `<path d="M10 80 L36 30 L62 80Z" opacity=".28"/><path d="M38 80 L64 30 L90 80Z"/>` },
+		{ id: '12', name: 'Corner', idea: 'A single right triangle sitting in the corner of an empty square frame.',
+			svg: `<path d="M14 14 H86 V86 H14Z" fill="none" stroke-width="4"/><path d="M14 52 L52 86 H14Z"/>` }
 	];
 
 	// s = full square, q = square, t = triangle top-right corner cut, b = bottom-right cut, r = leg triangle
@@ -64,14 +52,14 @@
 </svelte:head>
 
 <header class="top wrap">
-	<p class="mono muted">Raffael Prem e.U. · Mark directions · Nov 2026</p>
+	<p class="mono muted">Raffael Prem e.U. · Mark directions, round 2 · Nov 2026</p>
 </header>
 
 <section class="intro wrap">
-	<h1>Six marks, mostly triangles.</h1>
+	<h1>Round two. No letters.</h1>
 	<p class="lead">
-		Each one is a handful of flat shapes on a grid. Shown large, at favicon size, and on ink. Copper
-		is held back for the site, so every mark here is one colour.
+		Twelve abstract marks, all triangles. None of them spells anything; the name sits next to it.
+		Each is shown large, at 32 and 16 px, and on ink.
 	</p>
 </section>
 

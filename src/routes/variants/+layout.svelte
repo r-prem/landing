@@ -3,6 +3,7 @@
 	import './theme.css';
 	let { children } = $props();
 	const variants = [
+		{ href: '/variants/brand', label: 'Brand' },
 		{ href: '/variants/a', label: 'A · Datasheet' },
 		{ href: '/variants/b', label: 'B · History' },
 		{ href: '/variants/c', label: 'C · Bench' }

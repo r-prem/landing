@@ -1,91 +1,92 @@
-// Placeholder content shared by all design variants.
-// Swap these values for real ones once a direction is picked.
+// Placeholder content shared by all design variants. Swap for real values once a direction is picked.
 
 export const person = {
 	name: 'Raffael Prem',
 	first: 'Raffael',
-	city: 'Linz, Austria',
+	city: 'Linz',
+	country: 'Austria',
 	tz: 'Europe/Vienna',
 	email: 'hello@rprem.com',
 	linkedin: 'https://www.linkedin.com/in/raffael-prem/',
 	github: 'https://github.com/',
-	role: 'Software Engineer',
+	role: 'Software engineer',
 	company: 'Company Name',
 	companyUrl: '#',
 	since: '2025',
-	jobBlurb:
-		'Building product features end to end: from the database schema to the last pixel of the UI.',
-	available: true
+	about: [
+		'I write software for a living and solder things for fun. Most of my week is TypeScript and Postgres; most of my weekends end with a multimeter on the desk.',
+		'I like small tools that do one job well, hardware you can open up, and code that still makes sense a year later.'
+	]
 };
 
+export type Status = 'active' | 'live' | 'shelved';
+
 export type Project = {
+	id: string;
 	name: string;
-	kind: string;
-	year: string;
-	status: 'live' | 'building' | 'paused';
+	kind: 'software' | 'hardware';
+	year: number;
+	status: Status;
 	blurb: string;
-	stack: string[];
+	parts: string[];
 	url: string;
-	hue: number; // used for generated visuals
 };
 
 export const projects: Project[] = [
 	{
+		id: 'P-01',
 		name: 'Project Alpha',
-		kind: 'SaaS',
-		year: '2026',
-		status: 'building',
-		blurb: 'A short, specific sentence about what this does and who it is for.',
-		stack: ['SvelteKit', 'Postgres', 'Python'],
-		url: '#',
-		hue: 18
+		kind: 'software',
+		year: 2026,
+		status: 'active',
+		blurb: 'A web app that reads incoming documents and fills in the boring parts.',
+		parts: ['SvelteKit', 'Postgres', 'Python'],
+		url: '#'
 	},
 	{
-		name: 'Project Beta',
-		kind: 'Mobile app',
-		year: '2025',
+		id: 'P-02',
+		name: 'Split keyboard',
+		kind: 'hardware',
+		year: 2025,
 		status: 'live',
-		blurb: 'One line on the problem, one on how it solves it. No buzzwords.',
-		stack: ['React Native', 'TypeScript'],
-		url: '#',
-		hue: 205
+		blurb: '36 keys, hand-wired, running custom firmware. Typed this sentence.',
+		parts: ['RP2040', 'QMK', 'KiCad'],
+		url: '#'
 	},
 	{
-		name: 'Project Gamma',
-		kind: 'Open source',
-		year: '2025',
+		id: 'P-03',
+		name: 'Room sensors',
+		kind: 'hardware',
+		year: 2025,
 		status: 'live',
-		blurb: 'A small tool that scratched an itch and somehow got users.',
-		stack: ['Node.js', 'CLI'],
-		url: '#',
-		hue: 150
+		blurb: 'Six battery-powered sensors reporting temperature and CO₂ to a box in the hallway.',
+		parts: ['ESP32', 'MQTT', 'Home Assistant'],
+		url: '#'
 	},
 	{
+		id: 'P-04',
 		name: 'Project Delta',
-		kind: 'Experiment',
-		year: '2024',
-		status: 'paused',
-		blurb: 'Weekend experiment. Shelved, but taught me a lot.',
-		stack: ['Svelte', 'WebGL'],
-		url: '#',
-		hue: 280
+		kind: 'software',
+		year: 2024,
+		status: 'shelved',
+		blurb: 'A CLI that turned out to be a solution looking for a problem.',
+		parts: ['Rust', 'SQLite'],
+		url: '#'
 	}
 ];
 
-export const stack = [
-	'TypeScript',
-	'Svelte',
-	'React',
-	'Node.js',
-	'Python',
-	'Postgres',
-	'React Native',
-	'Docker',
-	'Figma'
+export const interests = {
+	software: ['TypeScript', 'Svelte', 'Postgres', 'Rust', 'Local-first apps'],
+	hardware: ['Microcontrollers', 'Mechanical keyboards', '3D printing', 'Homelab', 'PCB design']
+};
+
+export type Rev = { rev: string; date: string; what: string; note: string; current?: boolean };
+
+export const history: Rev[] = [
+	{ rev: 'D', date: '2025', what: 'Software engineer, Company Name', note: 'Product features end to end', current: true },
+	{ rev: 'C', date: '2022', what: 'Freelance developer', note: 'Web and mobile apps for clients in Austria' },
+	{ rev: 'B', date: '2019', what: 'First paid project', note: 'A booking site that is still online' },
+	{ rev: 'A', date: '2014', what: 'First Arduino', note: 'Blinked an LED, never stopped' }
 ];
 
-export const now = [
-	'Shipping Project Alpha’s first paid plan',
-	'Learning Rust, slowly',
-	'Running along the Danube before work'
-];
+export const now = 'Wiring a second batch of sensors and shipping Project Alpha’s first paid plan.';
